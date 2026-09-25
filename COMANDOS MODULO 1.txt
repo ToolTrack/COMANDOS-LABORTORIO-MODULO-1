@@ -1,0 +1,72 @@
+COMANDOS UTILIZADOS - SISTEMAS OPERATIVOS III
+Nombre: Leslie Rachell de los Santos Feliz
+Matrícula: 20261154
+
+
+ Configuración de parametros de red.
+============================================
+
+ip addr
+ip route
+nmcli connection show
+
+
+sudo nmcli connection modify ens33 ipv4.method auto
+sudo nmcli connection up ens33
+
+sudo nmcli connection modify ens33 ipv4.method manual ipv4.addresses 10.0.0.100/24 ipv4.gateway 10.0.0.1
+sudo nmcli connection modify ens33 ipv4.dns "8.8.8.8,8.8.4.4"
+sudo nmcli connection up ens33
+
+
+ip addr
+nmcli device show ens33
+
+sudo nmtui
+
+
+sudo ls /etc/NetworkManager/system-connections/
+sudo vi /etc/NetworkManager/system-connections/ens33.nmconnection
+sudo nmcli connection reload
+sudo nmcli connection up ens33
+
+
+ip addr
+nmcli device show ens33
+
+
+Gestion de Usuario y grupos
+============================================
+
+whoami
+sudo useradd leslie
+sudo usermod -aG wheel leslie
+id leslie
+sudo groupadd guest
+sudo useradd usuario_guest
+sudo usermod -aG guest usuario_guest
+id usuario_guest
+getent group guest
+sudo userdel -r usuario_guest
+sudo groupdel guest
+
+
+Practica 4: Gestion de Permisos de archivos
+============================================
+
+mkdir materia
+cd materia
+vi estudiante.txt
+cat estudiante.txt
+ls -l estudiante.txt
+chmod 700 estudiante.txt
+ls -l estudiante.txt
+chmod 070 estudiante.txt
+ls -l estudiante.txt
+cd ..
+mkdir materia2
+sudo chmod 470 materia/estudiante.txt
+cp materia/estudiante.txt materia2/
+ls -l materia2/
+rm -r materia
+ls
