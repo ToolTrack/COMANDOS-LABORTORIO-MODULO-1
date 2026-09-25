@@ -1,6 +1,4 @@
-COMANDOS UTILIZADOS - SISTEMAS OPERATIVOS III
-Nombre: Leslie Rachell de los Santos Feliz
-Matrícula: 20261154
+
 
 
  Configuración de parametros de red.
