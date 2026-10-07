@@ -1,1 +1,61 @@
+Comandos usados practica 1
+
+sudo dnf update
+sudo dnf upgrade
+sudo dnf check
+sudo dnf repolist all
+dnf search bashtop
+git clone https://github.com/aristocratos/bashtop.git
+cd bashtop
+ls
+./bashtop
+pwd
+cd ..
+rm -rf bashtop
+ls bashtop
+sudo dnf autoremove
+sudo dnf clean all
+
+==================================================
+
+Comandos usados practica 2 
+
+sudo crontab -e 
+0 23 * * * /usr/bin/dnf update -y 
+0 3 * * 0 /usr/sbin/reboot 
+sudo crontab -l 
+ls /tmp 
+sudo at now + 1 minute 
+rm -rf /tmp/*
+sudo atq  
+ls /tmp 
+
+==================================================
+
+Comandos usados practica 3
+
+lsblk
+
+fdisk/dev/sdc
+sudo fdisk /dev/sdc
+lsblk
+sudo mkfs.ext4 /dev/sdc1
+lsblk -f
+pwd
+ls
+cd ~/Escritorio
+mkdir less
+ls
+sudo mount /dev/sdc1 /home/lsantos/Escritorio/less
+findmnt /dev/sdc1
+cd less
+sudo touch AdrianAlcantara.txt
+ls
+cd ..
+sudo umount /dev/sdc1
+findmnt /dev/sdc1
+sudo mount /dev/sdc1 /mnt
+cd /mnt
+ls
+pwd
 
